@@ -1,0 +1,2 @@
+﻿All icons in this folder are from "Tango Icon Theme" version 0.8.90 which its license is "Public Domain".
+more information can be found on http://tango.freedesktop.org/Tango_Icon_Library

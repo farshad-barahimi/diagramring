@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DiagramRing version="1.0" GUID="{4B2FD325-AE73-4B3A-949A-2D5C54F9CBCA}" width="1000" height="1000">
+  <Nodes count="5">
+    
+    <Node x="100" y="20">
+      <Width>100</Width>
+      <Height>150</Height>
+      <NodeName>NormalNode</NodeName>
+      <ShapeName>DFDSymbol1</ShapeName>
+      <ZIndex>1</ZIndex>
+      <BackgroundColor>
+        <Red>100</Red>
+        <Green>120</Green>
+        <Blue>73</Blue>
+      </BackgroundColor>
+      <BackgroundStyle>Radial</BackgroundStyle>
+      <FontSize>16</FontSize>
+      <FontColor>
+        <Red>100</Red>
+        <Green>120</Green>
+        <Blue>73</Blue>
+      </FontColor>
+      <Label><![CDATA[Hello]]></Label>
+    </Node>
+
+    <Node x="100" y="20">
+      <Width>100</Width>
+      <Height>150</Height>
+      <NodeName>NormalNode</NodeName>
+      <ShapeName>DFDSymbol1</ShapeName>
+      <ZIndex>1</ZIndex>
+      <BackgroundColor>
+        <Red>100</Red>
+        <Green>120</Green>
+        <Blue>73</Blue>
+      </BackgroundColor>
+      <BackgroundStyle>Radial</BackgroundStyle>
+      <FontSize>16</FontSize>
+      <FontColor>
+        <Red>100</Red>
+        <Green>120</Green>
+        <Blue>73</Blue>
+      </FontColor>
+      <Label><![CDATA[Hello]]></Label>
+    </Node>
+    
+  </Nodes>
+  
+  <Edges count="4">
+    
+    <Edge>
+      <HeadNodeIndex>0</HeadNodeIndex>
+      <HeadConnectionIndex>3</HeadConnectionIndex>
+      <TailNodeIndex>5</TailNodeIndex>
+      <TailConnectionIndex>7</TailConnectionIndex>
+      <HeadSymbol>FilledRectangle</HeadSymbol>
+      <TailSymbol>None</TailSymbol>
+      
+      <EdgeParts count="3">
+        
+        <EdgePart x1="" y1="" x2="" y2="">
+          <EdgeLabels count="5">
+            <EdgeLabel percent="0.5" distance="3">
+              <Text><![CDATA[Hi]]></Text>
+            </EdgeLabel>
+            <EdgeLabel percent="0.5" distance="3">
+              <Text><![CDATA[Hi]]></Text>
+            </EdgeLabel>
+          </EdgeLabels>
+        </EdgePart>
+
+        <EdgePart x1="" y1="" x2="" y2="">
+          <EdgeLabels count="5">
+            <EdgeLabel percent="0.5" distance="3">
+              <Text><![CDATA[Hi]]></Text>
+            </EdgeLabel>
+            <EdgeLabel percent="0.5" distance="3">
+              <Text><![CDATA[Hi]]></Text>
+            </EdgeLabel>
+          </EdgeLabels>
+        </EdgePart>
+      </EdgeParts>
+    </Edge>
+
+    <Edge>
+      <HeadNodeIndex>0</HeadNodeIndex>
+      <HeadConnectionIndex>3</HeadConnectionIndex>
+      <TailNodeIndex>5</TailNodeIndex>
+      <TailConnectionIndex>7</TailConnectionIndex>
+      <HeadSymbol>FilledRectangle</HeadSymbol>
+      <TailSymbol>None</TailSymbol>
+
+      <EdgeParts count="3">
+
+        <EdgePart x1="" y1="" x2="" y2="">
+          <EdgeLabels count="5">
+            <EdgeLabel Text="Hi" Percent="0.5" Distance="3" />
+            <EdgeLabel Text="Hello" Percent="0.3" Distance="6" />
+          </EdgeLabels>
+        </EdgePart>
+
+        <EdgePart x1="" y1="" x2="" y2="">
+          <EdgeLabels count="5">
+            <EdgeLabel Text="Hi" Percent="0.5" Distance="3" />
+            <EdgeLabel Text="Hello" Percent="0.3" Distance="6" />
+          </EdgeLabels>
+        </EdgePart>
+      </EdgeParts>
+    </Edge>
+    
+  </Edges>
+</DiagramRing>

@@ -1,0 +1,21 @@
+﻿<Window x:Class="Project.SplashScreen"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Diagram Ring" Height="300" Width="620" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None" ShowInTaskbar="False">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.7,0.3" StartPoint="1,1">
+            <GradientStop Color="White" Offset="0" />
+            <GradientStop Color="SteelBlue" Offset="0.25" />
+            <GradientStop Color="White" Offset="1" />
+        </LinearGradientBrush>
+    </Window.Background>
+    <Grid>
+        <Border BorderBrush="Black" BorderThickness="2" Name="border1">
+            <StackPanel Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Label HorizontalAlignment="Center" FontSize="26" Content="Diagram Ring 6.3"></Label>
+                <Label HorizontalAlignment="Center" FontSize="20">Copyright © 2010-2013 , Farshad Barahimi . All rights reserved</Label>
+                <Label HorizontalAlignment="Center" FontSize="14">This software is licensed under the Apache License, Version 2.0</Label>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

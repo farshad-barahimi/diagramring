@@ -1,0 +1,226 @@
+﻿<Window x:Class="Project.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Diagram Ring" Height="600" Width="800" WindowState="Maximized" Loaded="Window_Loaded">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.7,0.3" StartPoint="1,1">
+            <GradientStop Color="LightSteelBlue" Offset="0" />
+            <GradientStop Color="White" Offset="1" />
+        </LinearGradientBrush>
+    </Window.Background>
+    <Window.Resources>
+        <Style x:Key="TopTabBorderStyle" TargetType="Border">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Width" Value="100"/>
+            <Setter Property="BorderBrush" Value="Black"/>
+            <Setter Property="BorderThickness" Value="0,0,1,0"/>
+            <Setter Property="VerticalAlignment" Value="Stretch"/>
+            <EventSetter Event="MouseEnter" Handler="TopTab_MouseEnter"/>
+            <EventSetter Event="MouseLeave" Handler="TopTab_MouseLeave"/>
+            <EventSetter Event="MouseLeftButtonDown" Handler="TopTab_MouseLeftButtonDown"/>
+        </Style>
+        <Style x:Key="TopTabLabelStyle" TargetType="Label">
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="10,0,10,0"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        <Style x:Key="TopTabButtonStyle" TargetType="Button">
+            <Setter Property="Margin" Value="2"/>
+            <Setter Property="Width" Value="40"/>
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="Background" Value="White"/>
+        </Style>
+    </Window.Resources>
+    <Grid Margin="10" Name="MainGrid">
+        <Border Height="100" HorizontalAlignment="Stretch" Margin="0" BorderBrush="Black" BorderThickness="1" 
+                VerticalAlignment="Top" Background="SteelBlue">
+            <StackPanel Margin="0">
+                <Border Height="35" HorizontalAlignment="Stretch" Margin="0" BorderBrush="Black" BorderThickness="0,0,0,1" VerticalAlignment="Top">
+                    <Border.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0.0">
+                            <GradientStop Color="SteelBlue" Offset="0" />
+                            <GradientStop Color="LightSteelBlue" Offset="1" />
+                        </LinearGradientBrush>
+                    </Border.Background>
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch" Name="TopTabStackPanel">
+                        <Border Name="HomeTabBorder" HorizontalAlignment="Left" Background="Red" Style="{StaticResource ResourceKey=TopTabBorderStyle}" >
+                            <Label Style="{StaticResource ResourceKey=TopTabLabelStyle}">Home</Label>
+                        </Border>
+                        <Border Name="DocumentTabBorder" Style="{StaticResource ResourceKey=TopTabBorderStyle}">
+                            <Label Style="{StaticResource ResourceKey=TopTabLabelStyle}">Document</Label>
+                        </Border>
+                        <Border Name="StyleTabBorder" Style="{StaticResource ResourceKey=TopTabBorderStyle}">
+                            <Label Style="{StaticResource ResourceKey=TopTabLabelStyle}">Styles</Label>
+                        </Border>
+                        <Border Name="HelpTabBorder" Style="{StaticResource ResourceKey=TopTabBorderStyle}">
+                            <Label Style="{StaticResource ResourceKey=TopTabLabelStyle}">Help</Label>
+                        </Border>
+                    </StackPanel>
+                </Border>
+                <StackPanel Name="TabStackPanel">
+                    <StackPanel Margin="5,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" Orientation="Horizontal" Name="HomeStackPanel">
+                        <Button Name="NewButton" Style="{StaticResource ResourceKey=TopTabButtonStyle}" Click="NewButton_Click">New</Button>
+                        <Button Name="OpenButton" Style="{StaticResource ResourceKey=TopTabButtonStyle}" Click="OpenButton_Click">Open</Button>
+                        <Button Name="SaveButton" Style="{StaticResource ResourceKey=TopTabButtonStyle}" Click="SaveButton_Click">Save</Button>
+                        <Button Name="ExporttButton" Style="{StaticResource ResourceKey=TopTabButtonStyle}" Click="ExporttButton_Click">Export to picture</Button>
+                        <Button Name="WebsiteButton" Style="{StaticResource ResourceKey=TopTabButtonStyle}" Click="WebsiteButton_Click" >Web site</Button>
+                        <Button Name="HelpButton" Style="{StaticResource ResourceKey=TopTabButtonStyle}" Click="HelpButton_Click">Help</Button>
+                        <Button Name="AboutButton" Style="{StaticResource ResourceKey=TopTabButtonStyle}" Click="About_Click">About Diagram Ring</Button>
+                        <Label/>
+                        <Border BorderBrush="White" BorderThickness="1" Padding="10,10,10,10" Height="40">
+                            <StackPanel Orientation="Horizontal">
+                                <RadioButton Name="SelectModeRadioButton" Checked="SelectModeRadioButton_Checked" Foreground="White" FontWeight="Bold" IsChecked="True">Select mode</RadioButton>
+                                <Label Width="10"/>
+                                <RadioButton Name="ConnectModeRadioButton" Checked="ConnectModeRadioButton_Checked" Foreground="White" FontWeight="Bold">Connect mode</RadioButton>
+                            </StackPanel>
+                        </Border>
+                        <Label/>
+                        <Border BorderBrush="White" BorderThickness="1" Padding="10,2,10,2" Height="40">
+                            <StackPanel Orientation="Horizontal">
+                                <Label Foreground="White" VerticalAlignment="Center">Default Edge type :</Label>
+                                <ComboBox Name="DefaultEdgeTypeComboBox" Margin="2" Width="60" Background="White" SelectionChanged="DefaultEdgeTypeComboBox_SelectionChanged" />
+                                <ComboBox Name="DefaultEdgeBrushComboBox" Margin="2" Width="60" Background="White" SelectionChanged="DefaultEdgeBrushComboBox_SelectionChanged" />
+                            </StackPanel>
+                        </Border>
+                    </StackPanel>
+                    <StackPanel Margin="5,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" Orientation="Horizontal" Visibility="Collapsed" Name="DocumentStackPanel">
+                        <Button Name="NewButton1" Style="{StaticResource ResourceKey=TopTabButtonStyle}" Click="NewButton_Click">New</Button>
+                        <Button Name="OpenButton1" Style="{StaticResource ResourceKey=TopTabButtonStyle}" Click="OpenButton_Click">Open</Button>
+                        <Button Name="SaveButton1" Style="{StaticResource ResourceKey=TopTabButtonStyle}" Click="SaveButton_Click">Save</Button>
+                        <Button Name="SaveAsButton" Style="{StaticResource ResourceKey=TopTabButtonStyle}" Click="SaveAsButton_Click">Save as</Button>
+                        <Button Name="ClipDocumentButton" Style="{StaticResource ResourceKey=TopTabButtonStyle}" Click="ClipDocumentButton_Click">Clip document</Button>
+                    </StackPanel>
+                    <StackPanel Margin="5,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" Orientation="Horizontal" Visibility="Collapsed" Name="StyleStackPanel">
+                    </StackPanel>
+                    <StackPanel Margin="5,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" Orientation="Horizontal" Visibility="Collapsed" Name="HelpStackPanel">
+                        <Button Name="HelpButton1" Style="{StaticResource ResourceKey=TopTabButtonStyle}" Click="HelpButton_Click">Help</Button>
+                        <Button Name="StartupButton" Style="{StaticResource ResourceKey=TopTabButtonStyle}" Click="StartupButton_Click">Startup screen</Button>
+                        <Button Name="AboutButton1" Style="{StaticResource ResourceKey=TopTabButtonStyle}" Click="About_Click">About Diagram Ring</Button>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+        </Border>
+        <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="0,105,0,5">
+            <Border Name="LeftTabBorder" Width="154" HorizontalAlignment="Left"
+                    BorderThickness="1" BorderBrush="Black">
+                <Border.Background>
+                    <LinearGradientBrush EndPoint="0.3,0.3" StartPoint="1,1">
+                        <GradientStop Color="White" Offset="0" />
+                        <GradientStop Color="LightSteelBlue" Offset="1" />
+                    </LinearGradientBrush>
+                </Border.Background>
+                <StackPanel Orientation="Horizontal">
+                    <Border Width="45" Margin="0,0,0,0" 
+                        BorderBrush="Black" BorderThickness="0,0,1,0" VerticalAlignment="Stretch" Background="SteelBlue">
+                        <StackPanel Name="LeftTabStackPanel" Width="45">
+                            <Border BorderBrush="Black" BorderThickness="0,0,1,1" HorizontalAlignment="Stretch" Name="MainShapesTabBorder" 
+                                Background="Red" MouseEnter="LeftTab_MouseEnter" Height="60"
+                                MouseLeave="LeftTab_MouseLeave" MouseLeftButtonDown="LeftTab_MouseLeftButtonDown">
+                                <TextBlock Text="Main" VerticalAlignment="Center" TextWrapping="Wrap" TextAlignment="Center"
+                                FontWeight="Bold" Foreground="White" HorizontalAlignment="Center"/>
+                            </Border>
+
+                            <Border BorderBrush="Black" BorderThickness="0,0,1,1" HorizontalAlignment="Stretch" Name="DFDTabBorder" 
+                                MouseEnter="LeftTab_MouseEnter" Height="60" Background="Transparent"
+                                MouseLeave="LeftTab_MouseLeave" MouseLeftButtonDown="LeftTab_MouseLeftButtonDown">
+                                <TextBlock Text="DFD" VerticalAlignment="Center" TextWrapping="Wrap" TextAlignment="Center"
+                                FontWeight="Bold" Foreground="White" HorizontalAlignment="Center"/>
+                            </Border>
+
+                            <Border BorderBrush="Black" BorderThickness="0,0,1,1" HorizontalAlignment="Stretch" Name="FlowchartTabBorder" 
+                                MouseEnter="LeftTab_MouseEnter" Height="60" Background="Transparent"
+                                MouseLeave="LeftTab_MouseLeave" MouseLeftButtonDown="LeftTab_MouseLeftButtonDown">
+                                <TextBlock Text="Flow  chart" VerticalAlignment="Center" TextWrapping="Wrap" TextAlignment="Center"
+                                FontWeight="Bold" Foreground="White" HorizontalAlignment="Center"/>
+                            </Border>
+
+                            <Border BorderBrush="Black" BorderThickness="0,0,1,1" HorizontalAlignment="Stretch" Name="ChartsTabBorder" 
+                                MouseEnter="LeftTab_MouseEnter" Height="60" Background="Transparent"
+                                MouseLeave="LeftTab_MouseLeave" MouseLeftButtonDown="LeftTab_MouseLeftButtonDown">
+                                <TextBlock Text="Charts" VerticalAlignment="Center" TextWrapping="Wrap" TextAlignment="Center"
+                                FontWeight="Bold" Foreground="White" HorizontalAlignment="Center"/>
+                            </Border>
+
+                            <Border BorderBrush="Black" BorderThickness="0,0,1,1" HorizontalAlignment="Stretch" Name="UMLTabBorder" 
+                                MouseEnter="LeftTab_MouseEnter" Height="60" Background="Transparent"
+                                MouseLeave="LeftTab_MouseLeave" MouseLeftButtonDown="LeftTab_MouseLeftButtonDown">
+                                <TextBlock Text="UML" VerticalAlignment="Center" TextWrapping="Wrap" TextAlignment="Center"
+                                FontWeight="Bold" Foreground="White" HorizontalAlignment="Center"/>
+                            </Border>
+
+                            <Border BorderBrush="Black" BorderThickness="0,0,1,1" HorizontalAlignment="Stretch" Name="ERDTabBorder" 
+                                MouseEnter="LeftTab_MouseEnter" Height="60" Background="Transparent"
+                                MouseLeave="LeftTab_MouseLeave" MouseLeftButtonDown="LeftTab_MouseLeftButtonDown">
+                                <TextBlock Text="ERD" VerticalAlignment="Center" TextWrapping="Wrap" TextAlignment="Center"
+                                FontWeight="Bold" Foreground="White" HorizontalAlignment="Center"/>
+                            </Border>
+                        </StackPanel>
+                    </Border>
+                    <ScrollViewer HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Auto">
+                        <StackPanel Orientation="Horizontal" Name="LeftStackPanel">
+                            <WrapPanel Margin="5" Name="MainShapesWrapPanel" Width="80" />
+                            <WrapPanel Margin="5" Name="DFDWrapPanel" Width="80" Visibility="Collapsed"/>
+                            <WrapPanel Margin="5" Name="FlowchartWrapPanel" Width="80" Visibility="Collapsed"/>
+                            <WrapPanel Margin="5" Name="ChartsWrapPanel" Width="80" Visibility="Collapsed"/>
+                            <WrapPanel Margin="5" Name="UMLWrapPanel" Width="80" Visibility="Collapsed"/>
+                            <WrapPanel Margin="5" Name="ERDWrapPanel" Width="80" Visibility="Collapsed"/>
+                        </StackPanel>
+                    </ScrollViewer>
+                </StackPanel>
+            </Border>
+            <Border Name="MainBorder" Margin="160,0,205,0" BorderThickness="1" BorderBrush="Black">
+                <ScrollViewer Name="scrollViewer"></ScrollViewer>
+            </Border>
+            <Border Name="RightBorder" Margin="0,0,0,0" Width="200" VerticalAlignment="Stretch" HorizontalAlignment="Right" BorderThickness="1" BorderBrush="Black" Background="SteelBlue">
+                <StackPanel Margin="5">
+                    <Expander Header="Overview" IsExpanded="True" >
+                        <Expander.Background>
+                            <LinearGradientBrush EndPoint="0.3,0.3" StartPoint="1,1">
+                                <GradientStop Color="LightSteelBlue" Offset="0" />
+                                <GradientStop Color="White" Offset="1" />
+                            </LinearGradientBrush>
+                        </Expander.Background>
+                        <Border Height="160" Background="White" BorderBrush="Black" BorderThickness="1" Margin="5">
+                            <Viewbox DataContext="{Binding ElementName=scrollViewer}">
+                                <Grid>
+                                    <Rectangle Width="{Binding Content.ActualWidth}" Height="{Binding Content.ActualHeight}">
+                                        <Rectangle.Fill>
+                                            <VisualBrush Visual="{Binding Content}" />
+                                        </Rectangle.Fill>
+                                    </Rectangle>
+                                    <Border BorderThickness="3" BorderBrush="Black" Background="#88EEEEEE" Width="{Binding ViewportWidth}" Height="{Binding ViewportHeight}" HorizontalAlignment="Left" VerticalAlignment="Top">
+                                        <Border.RenderTransform>
+                                            <TranslateTransform X="{Binding HorizontalOffset}" Y="{Binding VerticalOffset}" />
+                                        </Border.RenderTransform>
+                                    </Border>
+                                </Grid>
+                            </Viewbox>
+                        </Border>
+                    </Expander>
+                    <Expander Header="Functions" IsExpanded="True" Name="FunctionsExpander" >
+                        <Expander.Background>
+                            <LinearGradientBrush EndPoint="0.3,0.3" StartPoint="1,1">
+                                <GradientStop Color="LightSteelBlue" Offset="0" />
+                                <GradientStop Color="White" Offset="1" />
+                            </LinearGradientBrush>
+                        </Expander.Background>
+                        <StackPanel Margin="5" Name="FunctionsStackPanel">
+                        </StackPanel>
+                    </Expander>
+                    <Expander Header="Styles" IsExpanded="True" Name="StylesExpander" Visibility="Hidden" >
+                        <Expander.Background>
+                            <LinearGradientBrush EndPoint="0.3,0.3" StartPoint="1,1">
+                                <GradientStop Color="LightSteelBlue" Offset="0" />
+                                <GradientStop Color="White" Offset="1" />
+                            </LinearGradientBrush>
+                        </Expander.Background>
+                        <WrapPanel Margin="5" Name="StyleWrapPanel">
+                        </WrapPanel>
+                    </Expander>
+                </StackPanel>
+            </Border>
+        </Grid>
+    </Grid>
+</Window>

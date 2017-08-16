@@ -1,0 +1,105 @@
+﻿<Window x:Class="Project.StartupForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Startup screen" Height="460" Width="680" WindowStyle="ToolWindow" WindowStartupLocation="CenterScreen" Closing="Window_Closing">
+    <StackPanel Margin="10">
+        <StackPanel Orientation="Horizontal">
+            <StackPanel>
+                <GroupBox Margin="5" Header="File" Width="200" Background="White">
+                    <StackPanel>
+                        <Label>
+                            <Hyperlink Name="NewDiagramLink" Click="NewDiagramLink_Click">New diagram</Hyperlink>
+                        </Label>
+                        <Label>
+                            <Hyperlink Name="OpenDiagramLink" Click="OpenDiagramLink_Click">Open existing diagram</Hyperlink>
+                        </Label>
+                    </StackPanel>
+                </GroupBox>
+                <GroupBox Margin="5" Header="Help" Width="200" Background="White">
+                    <StackPanel>
+                        <Label>
+                            <Hyperlink Name="HelpLink" Click="HelpLink_Click">Help</Hyperlink>
+                        </Label>
+                    </StackPanel>
+                </GroupBox>
+                <GroupBox Margin="5" Header="Hints" Width="200" Background="White">
+                    <StackPanel Margin="0,10,0,10">
+                        <TextBlock Foreground="DarkRed" FontWeight="Bold">Hint 1 :</TextBlock>
+                        <TextBlock TextWrapping="Wrap">Edges can have multiple parts.</TextBlock>
+                        <TextBlock Foreground="DarkRed" FontWeight="Bold">Hint 2 :</TextBlock>
+                        <TextBlock TextWrapping="Wrap">You don't need to hold your mouse down while drawing edges.</TextBlock>
+                    </StackPanel>
+                </GroupBox>
+            </StackPanel>
+            <GroupBox Margin="5" Header="Samples" Width="200" Background="White" Height="350">
+                <StackPanel>
+                    <Label>
+                        <Hyperlink Name="Sample1Link" Click="Sample1Link_Click">Flowchart</Hyperlink>
+                    </Label>
+                    <Label>
+                        <Hyperlink Name="Sample2Link" Click="Sample2Link_Click">Class diagram</Hyperlink>
+                    </Label>
+                    <Label>
+                        <Hyperlink Name="Sample3Link" Click="Sample3Link_Click">Use case diagram</Hyperlink>
+                    </Label>
+                    <Label>
+                        <Hyperlink Name="Sample4Link" Click="Sample4Link_Click">Organizational chart</Hyperlink>
+                    </Label>
+                    <Label>
+                        <Hyperlink Name="Sample5Link" Click="Sample5Link_Click">Data flow diagram (DFD)</Hyperlink>
+                    </Label>
+                    <Label>
+                        <Hyperlink Name="Sample6Link" Click="Sample6Link_Click">Entity-Relationship diagram</Hyperlink>
+                    </Label>
+                    <Label>
+                        <Hyperlink Name="Sample7Link" Click="Sample7Link_Click">Pie chart</Hyperlink>
+                    </Label>
+                    <Label>
+                        <Hyperlink Name="Sample8Link" Click="Sample8Link_Click">Bar chart</Hyperlink>
+                    </Label>
+                </StackPanel>
+            </GroupBox>
+            <GroupBox Margin="5" Header="Shortcuts" Width="200" Background="White">
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label>Node properties :</Label>
+                        <Label Foreground="DarkRed" FontWeight="Bold">Enter</Label>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label>Edge properties :</Label>
+                        <Label Foreground="DarkRed" FontWeight="Bold">Space</Label>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label>Edge part properties :</Label>
+                        <Label Foreground="DarkRed" FontWeight="Bold">Enter</Label>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label>Break edge part :</Label>
+                        <Label Foreground="DarkRed" FontWeight="Bold">B</Label>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label>Delete node :</Label>
+                        <Label Foreground="DarkRed" FontWeight="Bold">Delete</Label>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label>Delete edge :</Label>
+                        <Label Foreground="DarkRed" FontWeight="Bold">Delete</Label>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label>Move nodes :</Label>
+                        <Label Foreground="DarkRed" FontWeight="Bold">Arrow keys</Label>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label>Duplicate node :</Label>
+                        <Label Foreground="DarkRed" FontWeight="Bold">D</Label>
+                    </StackPanel>
+                </StackPanel>
+            </GroupBox>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <CheckBox Name="DontShowCheckBox" Margin="10">Dont show this window again</CheckBox>
+            <Label Width="330"/>
+            <Button Name="CloseButton" Width="100" HorizontalAlignment="Right" Click="Button_Click" ToolTip="Close">Close</Button>
+        </StackPanel>
+    </StackPanel>
+</Window>

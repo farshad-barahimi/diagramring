@@ -1,0 +1,41 @@
+﻿<Window x:Class="Project.SpecialNodeProperties.ChartPropertiesForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Chart properties" Height="400" Width="550" WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow">
+    <StackPanel Margin="10">
+        <StackPanel Orientation="Horizontal">
+            <Label>Name :</Label>
+            <TextBox Name="NameTextBox" Width="100" TabIndex="1" Height="25"></TextBox>
+            <Label>Value :</Label>
+            <TextBox Name="ValueTextBox" Width="100" TabIndex="2" Height="25"></TextBox>
+            <Label/>
+            <Button Name="AddButton" Click="AddButton_Click" TabIndex="3">Add</Button>
+        </StackPanel>
+        <Label/>
+        <StackPanel Orientation="Horizontal">
+            <ListView Name="listView1" Height="200" ItemsSource="{Binding}" MinWidth="250" MinHeight="100" Width="400">
+                <ListView.View>
+                    <GridView AllowsColumnReorder="False">
+                        <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Path=Name}" Width="220"></GridViewColumn>
+                        <GridViewColumn Header="Value" DisplayMemberBinding="{Binding Path=Value}" Width="130"></GridViewColumn>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+            <Label/>
+            <Button Name="UpButton" TabIndex="9" Height="25" VerticalAlignment="Center" Click="UpButton_Click">Move up</Button>
+        </StackPanel>
+        <GroupBox Header="Edit">
+            <StackPanel Margin="5" Orientation="Horizontal">
+                <Label>Name :</Label>
+                <TextBox Name="EditNameTextBox" Height="25" TabIndex="4" Width="100" Text="{Binding Path=Name, Mode=OneWay}" DataContext="{Binding ElementName=listView1, Path=SelectedItem}"/>
+                <Label>Value :</Label>
+                <TextBox Name="EditValueTextBox" Height="25" TabIndex="5" Width="100" Text="{Binding Path=Value, Mode=OneWay}" DataContext="{Binding ElementName=listView1, Path=SelectedItem}"/>
+                <Label/>
+                <Button Name="EditButton" TabIndex="6" Width="80" Click="EditButton_Click">Update</Button>
+                <Label/>
+                <Button Name="RemoveButton" TabIndex="7" Width="80" Click="RemoveButton_Click">Remove</Button>
+            </StackPanel>
+        </GroupBox>
+        <Button Name="SaveButton" TabIndex="8" Margin="10" Height="30" HorizontalAlignment="Center" Click="SaveButton_Click">OK</Button>
+    </StackPanel>
+</Window>

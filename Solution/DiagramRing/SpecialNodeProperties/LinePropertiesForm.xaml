@@ -1,0 +1,13 @@
+﻿<Window x:Class="Project.SpecialNodeProperties.LinePropertiesForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Line properties" Height="100" Width="300" WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow">
+    <StackPanel VerticalAlignment="Center">
+        <StackPanel Orientation="Horizontal">
+            <Label>Lenght :</Label>
+            <TextBox Width="50" Name="LenghtTextBox"/>
+            <Label/>
+            <Button Name="SaveButton" Click="SaveButton_Click" IsDefault="True">OK</Button>
+        </StackPanel>
+    </StackPanel>
+</Window>

@@ -1,0 +1,108 @@
+﻿<Window x:Class="Project.NodePropertiesForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Properties" Height="500" Width="600" WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow">
+    <Grid>
+        <TabControl Margin="5,5,5,50">
+            <TabItem Header="General">
+                <StackPanel Margin="5">
+                    <StackPanel Orientation="Horizontal">
+                        <Label>Width :</Label>
+                        <TextBox Name="WidthTextBox" Margin="2" Width="100"></TextBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label>Height :</Label>
+                        <TextBox Name="HeightTextBox" Margin="2" Width="100"></TextBox>
+                    </StackPanel>
+                    <GroupBox Header="Background" TabIndex="2">
+                        <StackPanel Margin="5">
+                            <StackPanel Orientation="Horizontal">
+                                <Label>Color :</Label>
+                                <Border Width="30" BorderBrush="Black" BorderThickness="1" Name="colorBorder1"></Border>
+                                <Label/>
+                                <Button Name="ChangeColor1Button" Click="ChangeColor1Button_Click">Change Color</Button>
+                            </StackPanel>
+                            <Label>Style :</Label>
+                            <StackPanel Orientation="Horizontal" Height="30">
+                                <RadioButton Name="radioButton1" IsChecked="True">
+                                    <Border Width="30" Height="30"  BorderBrush="Black" BorderThickness="1" Name="styleBorder1"></Border>
+                                </RadioButton>
+                                <Label/>
+                                <RadioButton Name="radioButton2">
+                                    <Border Width="30" Height="30"  BorderBrush="Black" BorderThickness="1" Name="styleBorder2"></Border>
+                                </RadioButton>
+                                <Label/>
+                                <RadioButton Name="radioButton3">
+                                    <Border Width="30" Height="30"  BorderBrush="Black" BorderThickness="1" Name="styleBorder3"></Border>
+                                </RadioButton>
+                                <Label/>
+                                <RadioButton Name="radioButton4">
+                                    <Border Width="30" Height="30"  BorderBrush="Black" BorderThickness="1" Name="styleBorder4"></Border>
+                                </RadioButton>
+                                <Label/>
+                                <RadioButton Name="radioButton5">
+                                    <Border Width="30" Height="30"  BorderBrush="Black" BorderThickness="1" Name="styleBorder5"></Border>
+                                </RadioButton>
+                                <Label/>
+                                <RadioButton Name="radioButton6">
+                                    <Border Width="30" Height="30"  BorderBrush="Black" BorderThickness="1" Name="styleBorder6"></Border>
+                                </RadioButton>
+                                <Label/>
+                                <RadioButton Name="radioButton7">
+                                    <Border Width="30" Height="30"  BorderBrush="Black" BorderThickness="1" Name="styleBorder7"></Border>
+                                </RadioButton>
+                                <Label/>
+                                <RadioButton Name="radioButton8">
+                                    <Border Width="30" Height="30"  BorderBrush="Black" BorderThickness="1" Name="styleBorder8"></Border>
+                                </RadioButton>
+                            </StackPanel>
+                        </StackPanel>
+                    </GroupBox>
+                    <GroupBox Header="Label">
+                        <StackPanel Margin="5" Orientation="Horizontal">
+                            <StackPanel>
+                                <TextBox Name="LabelTextBox" Height="120" Width="200" VerticalScrollBarVisibility="Visible" AcceptsReturn="True" />
+                            </StackPanel>
+                            <Label/>
+                            <StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <Label>Color :</Label>
+                                    <Border Width="30" BorderBrush="Black" BorderThickness="1" Name="colorBorder2"></Border>
+                                    <Label/>
+                                    <Button Name="ChangeColor2Button" Click="ChangeColor2Button_Click">Change Color</Button>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <Label>Font size :</Label>
+                                    <Label/>
+                                    <ComboBox Width="60" Background="White" Margin="2" SelectedIndex="0" Name="FontComboBox" IsEditable="True">
+                                    </ComboBox>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <CheckBox Name="IsBoldCheckBox" VerticalAlignment="Center">Bold</CheckBox>
+                                    <Label/>
+                                    <CheckBox Name="IsItalicCheckBox" VerticalAlignment="Center">Italic</CheckBox>
+                                </StackPanel>
+                                <Label/>
+                                <StackPanel Orientation="Horizontal">
+                                    <RadioButton Name="radioButton9" VerticalAlignment="Center" IsChecked="True">Simple</RadioButton>
+                                    <Label/>
+                                    <RadioButton Name="radioButton10" VerticalAlignment="Center">Underline</RadioButton>
+                                    <Label/>
+                                    <RadioButton Name="radioButton11" VerticalAlignment="Center">Strike</RadioButton>
+                                </StackPanel>
+                                <Label/>
+                                <CheckBox Name="IsRightToLeftCheckbox"
+                                          Checked="IsRightToLeftCheckbox_Checked"
+                                          Unchecked="IsRightToLeftCheckbox_Unchecked"
+                                          >Right to left</CheckBox>
+                            </StackPanel>
+                        </StackPanel>
+                    </GroupBox>
+                </StackPanel>
+            </TabItem>
+        </TabControl>
+        <Button Name="SaveButton" Margin="0,0,0,10" VerticalAlignment="Bottom" HorizontalAlignment="Center" Click="SaveButton_Click" IsDefault="True">
+            Ok
+        </Button>
+    </Grid>
+</Window>

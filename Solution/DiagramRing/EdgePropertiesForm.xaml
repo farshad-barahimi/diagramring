@@ -1,0 +1,25 @@
+﻿<Window x:Class="Project.EdgePropertiesForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Edge properties" Height="240" Width="240" WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow">
+    <StackPanel Margin="10">
+        <StackPanel Orientation="Horizontal">
+            <Label>Head symbol :</Label>
+            <Label/>
+            <ComboBox Margin="2" Name="comboBox1"></ComboBox>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Label>Tail symbol :</Label>
+            <Label/>
+            <ComboBox Margin="2" Name="comboBox2"></ComboBox>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Label>Edge brush :</Label>
+            <Label/>
+            <ComboBox Margin="2" Name="comboBox3"></ComboBox>
+        </StackPanel>
+
+        <Label/>
+        <Button Name="SaveButton" HorizontalAlignment="Center" Height="30" Margin="5" Click="SaveButton_Click">OK</Button>
+    </StackPanel>
+</Window>
